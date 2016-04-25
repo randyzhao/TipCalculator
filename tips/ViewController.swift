@@ -10,6 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    private let currencyFormatter = NSNumberFormatter()
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        currencyFormatter.numberStyle = .CurrencyStyle
+        currencyFormatter.maximumFractionDigits = 2
+    }
+    
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var billField: UITextField!
@@ -27,6 +35,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func formatedPrice(price: Double) -> String{
+        return self.currencyFormatter.stringFromNumber(price) ?? ""
+    }
+    
     @IBAction func onEditingChanged(sender: AnyObject) {
         let tipPercentages = [0.18, 0.20, 0.22]
         let tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
@@ -35,10 +47,10 @@ class ViewController: UIViewController {
         let tip = billAmount * tipPercentage
         let total = billAmount + tip
         
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
-        
+        tipLabel.text = self.formatedPrice(tip)
+        totalLabel.text = self.formatedPrice(total)
     }
+    
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
     }

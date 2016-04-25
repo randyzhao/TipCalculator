@@ -104,16 +104,23 @@
             </objects>
             <point key="canvasLocation" x="929" y="341"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings-->
         <scene sceneID="cfC-aS-cCy">
             <objects>
                 <viewController id="VHG-os-qzc" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XJC-UN-aqp" customClass="Settings">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6SO-o6-zY8">
+                                <rect key="frame" x="40" y="117" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Vg9-TW-GUS"/>
+                    <navigationItem key="navigationItem" title="Settings" id="Vg9-TW-GUS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3L-QT-kB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Veu-mV-B82">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tip Calculator-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tips" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,6 +81,13 @@
                             <outletCollection property="gestureRecognizers" destination="MMx-4D-8iM" appends="YES" id="1rO-0W-Pvm"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" title="Tip Calculator" id="FMB-Lz-gK0">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="uAe-c8-xfk">
+                            <connections>
+                                <segue destination="VHG-os-qzc" kind="push" id="fXh-vR-wmp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billField" destination="Coc-Og-nCe" id="Yaa-El-nN4"/>
                         <outlet property="tipControl" destination="yPk-UF-JSL" id="Kbu-kn-7mi"/>
@@ -94,6 +101,39 @@
                         <action selector="onTap:" destination="BYZ-38-t0r" id="P3E-7m-ZJp"/>
                     </connections>
                 </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="929" y="341"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cfC-aS-cCy">
+            <objects>
+                <viewController id="VHG-os-qzc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XJC-UN-aqp" customClass="Settings">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vg9-TW-GUS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g3L-QT-kB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1351" y="341"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gdv-v9-drV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Veu-mV-B82" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mwv-nT-AQp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6nh-fV-Twn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="93g-Hu-8Fy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="397" y="341"/>
         </scene>

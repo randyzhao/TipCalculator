@@ -12,7 +12,10 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        for label in defaultLabels {
+            label.hidden = true
+        }
+        defaultLabels[0].hidden = false
         // Do any additional setup after loading the view.
     }
 
@@ -31,5 +34,17 @@ class SettingsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+  
+    @IBAction func onSetAsDefault(sender: UIButton) {
+        let index = setAsDefaultButtons.indexOf(sender) ?? 0
+        for label in defaultLabels {
+            label.hidden = true
+        }
+        defaultLabels[index].hidden = false
+    }
+    
+    @IBOutlet var setAsDefaultButtons: [UIButton]!
+    
+    @IBOutlet var defaultLabels: [UILabel]!
+    
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A460163A1CCF281900F5D503 /* StorageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46016391CCF281900F5D503 /* StorageHelper.swift */; };
 		A4645B741CCD358400BCD113 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4645B731CCD358400BCD113 /* AppDelegate.swift */; };
 		A4645B761CCD358400BCD113 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4645B751CCD358400BCD113 /* ViewController.swift */; };
 		A4645B791CCD358400BCD113 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4645B771CCD358400BCD113 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A46016391CCF281900F5D503 /* StorageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageHelper.swift; sourceTree = "<group>"; };
 		A4645B701CCD358400BCD113 /* tips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4645B731CCD358400BCD113 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4645B751CCD358400BCD113 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				A4645B7A1CCD358400BCD113 /* Assets.xcassets */,
 				A4645B7C1CCD358400BCD113 /* LaunchScreen.storyboard */,
 				A4645B7F1CCD358400BCD113 /* Info.plist */,
+				A46016391CCF281900F5D503 /* StorageHelper.swift */,
 			);
 			path = tips;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				A4645B761CCD358400BCD113 /* ViewController.swift in Sources */,
 				A4645B741CCD358400BCD113 /* AppDelegate.swift in Sources */,
 				A4645BA21CCDB4BD00BCD113 /* SettingsViewController.swift in Sources */,
+				A460163A1CCF281900F5D503 /* StorageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

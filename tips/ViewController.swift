@@ -27,8 +27,22 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
+        setPercentageSegs()
     }
 
+    override func viewWillAppear(animated: Bool) {
+        setPercentageSegs()
+        updateLabels()
+    }
+    
+    func setPercentageSegs() {
+        for index in 0...2 {
+            let percentage = StorageHelper.loadOrUseDefaultPercentage(index)
+            PercentageSeg.setTitle("\(percentage)%", forSegmentAtIndex: index)
+        }
+        PercentageSeg.selectedSegmentIndex = StorageHelper.loadDefaultPercentageIndex()
+    }
+    
     @IBOutlet weak var tipControl: UISegmentedControl!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -40,8 +54,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onEditingChanged(sender: AnyObject) {
-        let tipPercentages = [0.18, 0.20, 0.22]
-        let tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
+        updateLabels()
+    }
+    
+    func updateLabels() {
+        let tipPercentage = Double(StorageHelper.loadOrUseDefaultPercentage(tipControl.selectedSegmentIndex)) * 0.01
         
         let billAmount = Double(billField.text ?? "0") ?? 0
         let tip = billAmount * tipPercentage
@@ -50,9 +67,10 @@ class ViewController: UIViewController {
         tipLabel.text = self.formatedPrice(tip)
         totalLabel.text = self.formatedPrice(total)
     }
-    
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
     }
+    
+    @IBOutlet weak var PercentageSeg: UISegmentedControl!
 }
 

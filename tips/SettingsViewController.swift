@@ -9,14 +9,13 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         for label in defaultLabels {
             label.hidden = true
         }
-        defaultLabels[0].hidden = false
-        // Do any additional setup after loading the view.
+        defaultLabels[StorageHelper.loadDefaultPercentageIndex()].hidden = false
+        loadOrSetPercentage()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +23,14 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func loadOrSetPercentage() {
+        for index in 0...2 {
+            let percentage = StorageHelper.loadOrUseDefaultPercentage(index)
+            StorageHelper.savePercentage(index, percentage: percentage)
+            percentageTextFields[index].text = String(percentage)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -41,10 +47,16 @@ class SettingsViewController: UIViewController {
             label.hidden = true
         }
         defaultLabels[index].hidden = false
+        StorageHelper.saveDefaultPercentageIndex(index)
+    }
+    @IBAction func onPercentageTextFieldEditingChanged(sender: UITextField) {
+        let index = percentageTextFields.indexOf(sender) ?? 0
+        StorageHelper.savePercentage(index, percentage: Int(sender.text ?? "0") ?? 0)
     }
     
     @IBOutlet var setAsDefaultButtons: [UIButton]!
     
     @IBOutlet var defaultLabels: [UILabel]!
     
+    @IBOutlet var percentageTextFields: [UITextField]!
 }

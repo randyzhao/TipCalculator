@@ -28,14 +28,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hoe-dS-nGb">
-                                <rect key="frame" x="18" y="264" width="87" height="36"/>
+                                <rect key="frame" x="18" y="217" width="87" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kFG-Ka-niU">
-                                <rect key="frame" x="142" y="272" width="173" height="23"/>
+                                <rect key="frame" x="142" y="225" width="173" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -48,13 +48,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" id="USP-8s-HcD">
-                                <rect key="frame" x="18" y="205" width="285" height="7"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="yPk-UF-JSL">
-                                <rect key="frame" x="20" y="348" width="289" height="29"/>
+                                <rect key="frame" x="20" y="285" width="289" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="18%"/>
@@ -74,6 +69,11 @@
                                     <action selector="onEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="OZ0-t6-KTJ"/>
                                 </connections>
                             </textField>
+                            <view contentMode="scaleToFill" id="USP-8s-HcD">
+                                <rect key="frame" x="18" y="175" width="285" height="7"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -89,6 +89,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="PercentageSeg" destination="yPk-UF-JSL" id="y5D-9y-nls"/>
                         <outlet property="billField" destination="Coc-Og-nCe" id="Yaa-El-nN4"/>
                         <outlet property="tipControl" destination="yPk-UF-JSL" id="Kbu-kn-7mi"/>
                         <outlet property="tipLabel" destination="Fi6-ke-nmE" id="mUq-T2-0yg"/>
@@ -123,13 +124,19 @@
                                 <rect key="frame" x="20" y="180" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="onPercentageTextFieldEditingChanged:" destination="VHG-os-qzc" eventType="editingChanged" id="WzM-B3-x3f"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="22" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="SpZ-I4-Ort">
                                 <rect key="frame" x="20" y="244" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="onPercentageTextFieldEditingChanged:" destination="VHG-os-qzc" eventType="editingChanged" id="9xv-Tt-5y8"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ezi-gG-CHn">
                                 <rect key="frame" x="214" y="179" width="95" height="30"/>
@@ -172,7 +179,10 @@
                                 <rect key="frame" x="20" y="121" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="onPercentageTextFieldEditingChanged:" destination="VHG-os-qzc" eventType="editingChanged" id="yKs-Vd-vhk"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QZw-bR-7vT">
                                 <rect key="frame" x="214" y="120" width="95" height="30"/>
@@ -193,6 +203,9 @@
                         <outletCollection property="defaultLabels" destination="APq-sq-kNC" collectionClass="NSMutableArray" id="gq5-0O-qRQ"/>
                         <outletCollection property="defaultLabels" destination="QRr-or-hgx" collectionClass="NSMutableArray" id="zWy-uO-9HA"/>
                         <outletCollection property="defaultLabels" destination="AL6-zi-8mu" collectionClass="NSMutableArray" id="jyZ-8d-Y9m"/>
+                        <outletCollection property="percentageTextFields" destination="wGx-Kj-Fu5" collectionClass="NSMutableArray" id="zGe-IC-Cdq"/>
+                        <outletCollection property="percentageTextFields" destination="glx-m6-dUb" collectionClass="NSMutableArray" id="uMo-ws-gWU"/>
+                        <outletCollection property="percentageTextFields" destination="SpZ-I4-Ort" collectionClass="NSMutableArray" id="VVd-zv-OCU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3L-QT-kB8" userLabel="First Responder" sceneMemberID="firstResponder"/>

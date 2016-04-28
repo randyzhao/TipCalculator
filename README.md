@@ -28,10 +28,17 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 ### User can enter a bill amount, choose a tip percentage, and see the tip and total values:
+
 ![basic usage](http://i.imgur.com/bFekApc.gif?1)
 
 ### User can customize and save the percentage of tip:
+
 ![customization](http://i.imgur.com/gemVHlC.gif?1)
+
+### Fade in / Fade out of default labels in settings page:
+
+![animation](http://i.imgur.com/EtjCggg.gif?1)
+
 ## Notes
 
 Table view in iOS is not straightforward. Not sure why tableview's APIs can not be designed as they are in html.

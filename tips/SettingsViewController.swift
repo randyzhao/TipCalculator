@@ -12,9 +12,9 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         for label in defaultLabels {
-            label.hidden = true
+            fadeOut(label, duration: 0)
         }
-        defaultLabels[StorageHelper.loadDefaultPercentageIndex()].hidden = false
+        fadeIn(defaultLabels[StorageHelper.loadDefaultPercentageIndex()], duration: 0)
         loadOrSetPercentage()
     }
 
@@ -31,22 +31,23 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func fadeIn(target: UIView, duration: Double = 0.5) {
+        UIView.animateWithDuration(duration, animations: {
+            target.alpha = 1
+        });
     }
-    */
-  
+    
+    func fadeOut(target: UIView, duration: Double = 0.5) {
+        UIView.animateWithDuration(duration, animations: {
+            target.alpha = 0
+        });
+    }
+    
     @IBAction func onSetAsDefault(sender: UIButton) {
         let index = setAsDefaultButtons.indexOf(sender) ?? 0
-        for label in defaultLabels {
-            label.hidden = true
-        }
-        defaultLabels[index].hidden = false
+        let currentDefaultIndex = StorageHelper.loadDefaultPercentageIndex()
+        fadeOut(defaultLabels[currentDefaultIndex])
+        fadeIn(defaultLabels[index])
         StorageHelper.saveDefaultPercentageIndex(index)
     }
     @IBAction func onPercentageTextFieldEditingChanged(sender: UITextField) {

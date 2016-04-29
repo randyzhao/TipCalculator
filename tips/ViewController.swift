@@ -28,6 +28,9 @@ class ViewController: UIViewController {
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
         setPercentageSegs()
+        if let billAmount = StorageHelper.loadBillAmountIfNotExpired() {
+            billField.text = String(billAmount)
+        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -56,6 +59,9 @@ class ViewController: UIViewController {
     
     @IBAction func onEditingChanged(sender: AnyObject) {
         updateLabels()
+        if let billAmount = Double(billField.text ?? "") {
+            StorageHelper.saveBillAmountWithTimestamp(billAmount)
+        }
     }
     
     func updateLabels() {

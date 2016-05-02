@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     }
 
     func formatedPrice(price: Double) -> String{
-        return self.currencyFormatter.stringFromNumber(price) ?? ""
+        return self.formatAmount(price)
     }
     
     @IBAction func onEditingChanged(sender: AnyObject) {
@@ -62,6 +62,12 @@ class ViewController: UIViewController {
         if let billAmount = Double(billField.text ?? "") {
             StorageHelper.saveBillAmountWithTimestamp(billAmount)
         }
+    }
+    
+    func formatAmount(total: Double) -> String {
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = .CurrencyStyle
+        return formatter.stringFromNumber(total) ?? ""
     }
     
     func updateLabels() {
@@ -74,6 +80,7 @@ class ViewController: UIViewController {
         tipLabel.text = self.formatedPrice(tip)
         totalLabel.text = self.formatedPrice(total)
     }
+    
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
     }

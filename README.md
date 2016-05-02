@@ -17,7 +17,7 @@ The following **optional** features are implemented:
 * [x] UI animations
 * [x] Remembering the bill amount across app restarts (if <10mins)
 * [x] Using locale-specific currency and currency thousands separators.
-* [ ] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
+* [x] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 
 The following **additional** features are implemented:
 
@@ -44,6 +44,9 @@ Here's a walkthrough of implemented user stories:
 
 ### Using locale-specific currency and currency thousands separators
 ![localization](http://i.imgur.com/ZCk6xkB.gif?1)
+
+### Making sure the keyboard is always visible and the bill amount is always the first responder
+![always show keyboard](http://i.imgur.com/AlBdb14.gif?1)
 ## Notes
 
 Table view in iOS is not straightforward. Not sure why tableview's APIs can not be designed as they are in html.

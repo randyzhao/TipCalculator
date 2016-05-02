@@ -37,6 +37,7 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         setPercentageSegs()
         updateLabels()
+        billField.becomeFirstResponder();
     }
     
     func setPercentageSegs() {

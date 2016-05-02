@@ -29,15 +29,15 @@ Here's a walkthrough of implemented user stories:
 
 ### User can enter a bill amount, choose a tip percentage, and see the tip and total values:
 
-![basic usage](http://i.imgur.com/bFekApc.gif?1)
+![basic usage](http://i.imgur.com/3rLbbzt.gif?1)
 
 ### User can customize and save the percentage of tip:
 
-![customization](http://i.imgur.com/gemVHlC.gif?1)
+![customization](http://i.imgur.com/lOO9Cyv.gif?1)
 
 ### Fade in / Fade out of default labels in settings page:
 
-![animation](http://i.imgur.com/EtjCggg.gif?1)
+![animation](http://i.imgur.com/VvFlBUG.gif?1)
 
 ### Remembering the bill amount across app restarts (if <10mins)
 ![billamounts](http://i.imgur.com/8sv4yj2.gif?1)
